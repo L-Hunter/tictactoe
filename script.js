@@ -1,60 +1,83 @@
-// var a1 = document.getElementById("a1");
-// var a2 = document.getElementById("a2");
-// var a3 = document.getElementById("a3");
-// var b1 = document.getElementById("b1");
-// var b2 = document.getElementById("b2");
-// var b3 = document.getElementById("b3");
-// var c1 = document.getElementById("c1");
-// var c2 = document.getElementById("c2");
-// var c3 = document.getElementById("c3");
-
+document.getElementById("playerX").style.color = "red";
+document.getElementById("playerO").style.color = "gray";
 var counter = 1;
 
-// var board = {
-// 	a1: " ",
-// 	a2: " ",
-// 	a3: " ",
-// 	b1: " ",
-// 	b2: " ",
-// 	b3: " ",
-// 	c1: " ",
-// 	c2: " ",
-// 	c3: " "
-// }
+var activeGame = true;
+
+function newGame(){
+	location.reload();
+}
 
 function yourMove (place){
-	// if (a1 === a2 === a3) {
-	// 	alert("three in a row!");
-	// }
-	if (counter % 2 === 0) {
-		place.innerHTML = "O";
-		//board.place = "O";
-		counter ++;
-	}
-	else {
-		place.innerHTML = "X";
-		//board[place] = "X";
-		counter ++;
+	if (activeGame === true && place.textContent != "X" && place.textContent != "O"){
+		if (counter % 2 === 0) {
+			place.innerHTML = "O";		
+			counter ++;
+			victory("O");
+			playerStats();
+		} else {
+			place.innerHTML = "X";
+			counter ++;
+			victory("X");
+			playerStats();
+		}
 	}
 }
 
+function playerStats(){
+	var pX = document.getElementById("playerX");
+	var pO = document.getElementById("playerO");
+	if (activeGame === true) {
+		if (counter % 2 === 0) {
+			pO.style.color = "red";
+			pX.style.color = "gray";
+		} else {
+			pO.style.color = "gray";
+			pX.style.color = "red";
+		}
+	}
+}
 
+function victory(w){
+	var a1 = document.getElementById("a1").textContent;
+	var a2 = document.getElementById("a2").textContent;
+	var a3 = document.getElementById("a3").textContent;
+	var b1 = document.getElementById("b1").textContent;
+	var b2 = document.getElementById("b2").textContent;
+	var b3 = document.getElementById("b3").textContent;
+	var c1 = document.getElementById("c1").textContent;
+	var c2 = document.getElementById("c2").textContent;
+	var c3 = document.getElementById("c3").textContent;
 
+	var winnerMessage = "Three in a row! Congrats on your victory, Player " + w + "!";
 
-// wins:
-// a1.value === a2.value === a3.value 
-// b1 b2 b3
-// c1 c2 c3
-// a1 b1 c1
-// a2 b2 c2
-// a3 b3 c3
-// a1 b2 c3
-// c1 b2 a3
+	if ((a1 == "X" || a1 == "O") && (a1 == a2 && a1 == a3)) {
+		activeGame = false;
+		alert(winnerMessage);
+	} else if ((b1 == "X" || b1 == "O") && (b1 == b2 && b1 == b3)) {
+		activeGame = false;
+		alert(winnerMessage);
+	} else if ((c1 == "X" || c1 == "O") && (c1 == c2 && c1 == c3)){
+		activeGame = false;
+		alert(winnerMessage);
+	} else if ((a1 == "X" || a1 == "O") && (a1 == b1 && a1 == c1)){
+		activeGame = false;
+		alert(winnerMessage);
+	} else if ((a2 == "X" || a2 == "O") && (a2 == b2 && a2 == c2)){
+		activeGame = false;
+		alert(winnerMessage);
+	} else if ((a3 == "X" || a3 == "O") && (a3 == b3 && a3 == c3)){
+		activeGame = false;
+		alert(winnerMessage);
+	} else if ((a1 == "X" || a1 == "O") && (a1 == b2 && a1 == c3)){
+		activeGame = false;
+		alert(winnerMessage);
+	} else if ((c1 == "X" || c1 == "O") && (c1 == b2 && c1 == a3)){
+		activeGame = false;
+		alert(winnerMessage);
+	} else if (counter === 10) {
+		activeGame = false;
+		alert("Game over, LOSERS!");
+	}
+}
 
-//prevent overwriting an X or an O
-//stop with 3 in a row
-
-// from odin project
-// Create a render() function which cycles through that board object and creates the appropriate HTML elements. Style them to look like a real tic-tac-toe board.
-// Build the main game logic (we won't give too many hints here). When the user clicks on a blank square, it should show the current player's symbol. This can be triggered by listening for a click event on the appropriate div. It may be helpful to give each div a data attribute or id based on its position so you can identify it in your JS code.
-// The game logic should then check whether the game is over -- if any player has achieved victory or if there are no more turns available. In the event of victory or defeat, display an appropriate message on the screen.

@@ -5,25 +5,28 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div id="player1">Player X</div>
-<div id="player2">Player O</div>
+<div><span id="playerX">Player X</span> VS. <span id="playerO">Player O</span></div>
+<!-- original board -->
 <div class="gameboard">
 	<div class="row">
-		<div id="a1" class="game-square" onclick="yourMove(a1)">.</div>
-		<div id="a2" class="game-square" onclick="yourMove(a2)">.</div>
-		<div id="a3" class="game-square" onclick="yourMove(a3)">.</div>
+		<div id="a1" class="game-square" onclick="yourMove(a1)">&nbsp;</div>
+		<div id="a2" class="game-square" onclick="yourMove(a2)">&nbsp;</div>
+		<div id="a3" class="game-square" onclick="yourMove(a3)">&nbsp;</div>
 	</div>
 	<div class="row">
-		<div id="b1" class="game-square" onclick="yourMove(b1)">.</div>
-		<div id="b2" class="game-square" onclick="yourMove(b2)">.</div>
-		<div id="b3" class="game-square" onclick="yourMove(b3)">.</div>
+		<div id="b1" class="game-square" onclick="yourMove(b1)">&nbsp;</div>
+		<div id="b2" class="game-square" onclick="yourMove(b2)">&nbsp;</div>
+		<div id="b3" class="game-square" onclick="yourMove(b3)">&nbsp;</div>
 	</div>
 	<div class="row">
-		<div id="c1" class="game-square" onclick="yourMove(c1)">.</div>
-		<div id="c2" class="game-square" onclick="yourMove(c2)">.</div>
-		<div id="c3" class="game-square" onclick="yourMove(c3)">.</div>
+		<div id="c1" class="game-square" onclick="yourMove(c1)">&nbsp;</div>
+		<div id="c2" class="game-square" onclick="yourMove(c2)">&nbsp;</div>
+		<div id="c3" class="game-square" onclick="yourMove(c3)">&nbsp;</div>
 	</div>
 </div>
+
+<div><button type="button" onclick="newGame()">New Game</button></div>
+
 <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
