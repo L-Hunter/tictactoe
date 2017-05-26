@@ -3,29 +3,35 @@
 <head>
 	<title>Tic Tac Toe</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" href="favicon-hashtag.ico" type="image/x-icon">
+<link rel="icon" href="favicon-hashtag.ico" type="image/x-icon">
 </head>
 <body>
-<div><span id="playerX">Player X</span> VS. <span id="playerO">Player O</span></div>
+
+<div class="wrapper">
+<div><h1><span id="playerX" class="x">Player X</span> <span class="neutral"> VERSUS </span> <span id="playerO" class="inactive">Player O</span></h1></div>
 <!-- original board -->
 <div class="gameboard">
 	<div class="row">
 		<div id="a1" class="game-square" onclick="yourMove(a1)">&nbsp;</div>
-		<div id="a2" class="game-square" onclick="yourMove(a2)">&nbsp;</div>
+		<div id="a2" class="game-square middle-box" onclick="yourMove(a2)">&nbsp;</div>
 		<div id="a3" class="game-square" onclick="yourMove(a3)">&nbsp;</div>
 	</div>
 	<div class="row">
-		<div id="b1" class="game-square" onclick="yourMove(b1)">&nbsp;</div>
-		<div id="b2" class="game-square" onclick="yourMove(b2)">&nbsp;</div>
-		<div id="b3" class="game-square" onclick="yourMove(b3)">&nbsp;</div>
+		<div id="b1" class="game-square middle-row" onclick="yourMove(b1)">&nbsp;</div>
+		<div id="b2" class="game-square middle-row middle-box" onclick="yourMove(b2)">&nbsp;</div>
+		<div id="b3" class="game-square middle-row" onclick="yourMove(b3)">&nbsp;</div>
 	</div>
 	<div class="row">
 		<div id="c1" class="game-square" onclick="yourMove(c1)">&nbsp;</div>
-		<div id="c2" class="game-square" onclick="yourMove(c2)">&nbsp;</div>
+		<div id="c2" class="game-square middle-box" onclick="yourMove(c2)">&nbsp;</div>
 		<div id="c3" class="game-square" onclick="yourMove(c3)">&nbsp;</div>
 	</div>
 </div>
 
 <div><button type="button" onclick="newGame()">New Game</button></div>
+
+</div>
 
 <script type="text/javascript" src="script.js"></script>
 </body>

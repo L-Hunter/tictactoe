@@ -1,5 +1,5 @@
-document.getElementById("playerX").style.color = "red";
-document.getElementById("playerO").style.color = "gray";
+// document.getElementById("playerX").style.color = "red";
+// document.getElementById("playerO").style.color = "gray";
 var counter = 1;
 
 var activeGame = true;
@@ -11,12 +11,14 @@ function newGame(){
 function yourMove (place){
 	if (activeGame === true && place.textContent != "X" && place.textContent != "O"){
 		if (counter % 2 === 0) {
-			place.innerHTML = "O";		
+			place.innerHTML = "O";	
+			place.style.color = "black";	
 			counter ++;
 			victory("O");
 			playerStats();
 		} else {
 			place.innerHTML = "X";
+			place.style.color = "white";
 			counter ++;
 			victory("X");
 			playerStats();
@@ -29,11 +31,11 @@ function playerStats(){
 	var pO = document.getElementById("playerO");
 	if (activeGame === true) {
 		if (counter % 2 === 0) {
-			pO.style.color = "red";
-			pX.style.color = "gray";
+			pO.className = "o";
+			pX.className = "inactive";
 		} else {
-			pO.style.color = "gray";
-			pX.style.color = "red";
+			pO.className = "inactive";
+			pX.className = "x";
 		}
 	}
 }
