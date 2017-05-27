@@ -71,7 +71,7 @@ h1 {
 	width: 25%;
 	padding-top: 50px;
 	display: inline-block;
-	float: left;
+	float: right;
 }
 
 #victor {
@@ -79,4 +79,59 @@ h1 {
 	font-weight: bold;
 	font-size: 30px;
 	color: #ed4a3c;
+}
+
+@media all and (max-width: 1120px) {
+	.gameboard {
+		display: block;
+		width: 100%;
+	}
+
+	.controls {
+		display: block;
+		width: 90%;
+		padding-top: 20px;
+	}
+
+	.new-game {
+/*		display: inline;*/
+		width: 30%;
+		display: inline-block;
+		float: right;
+	}
+
+	#victor {
+/*		display: inline;*/
+		width: 60%;
+		padding-top: 10px;
+		font-size: 20px;
+		display: inline-block;
+		float: left;
+	}
+}
+
+@media all and (max-width: 730px) {
+	.wrapper {
+		width: 100%;
+	}
+
+	.game-square {
+		height: 140px;
+		width: 140px;
+		font-size: 60px;
+		padding: 1px;
+	}
+
+	.row {
+		width: 500px;
+	}
+
+	h1 {
+		font-size: 22px;
+	}
+
+	.new-game {
+		font-size: 20px;
+	}
+
 }

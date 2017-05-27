@@ -77,7 +77,7 @@ function victory(w){
 		victorDisplay.innerHTML = winnerMessage;
 	} else if (counter === 10) {
 		activeGame = false;
-		victorDisplay.innerHTML = "Game over, LOSERS!";
+		victorDisplay.innerHTML = "Game over, LOSERS!<br>&nbsp;";
 	}
 }
 
