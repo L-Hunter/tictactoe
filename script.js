@@ -1,7 +1,5 @@
-// document.getElementById("playerX").style.color = "red";
-// document.getElementById("playerO").style.color = "gray";
-var counter = 1;
 
+var counter = 1;
 var activeGame = true;
 
 function newGame(){
@@ -50,36 +48,36 @@ function victory(w){
 	var c1 = document.getElementById("c1").textContent;
 	var c2 = document.getElementById("c2").textContent;
 	var c3 = document.getElementById("c3").textContent;
-
+	var victorDisplay = document.getElementById("victor");
 	var winnerMessage = "Three in a row! Congrats on your victory, Player " + w + "!";
 
 	if ((a1 == "X" || a1 == "O") && (a1 == a2 && a1 == a3)) {
 		activeGame = false;
-		alert(winnerMessage);
+		victorDisplay.innerHTML = winnerMessage;
 	} else if ((b1 == "X" || b1 == "O") && (b1 == b2 && b1 == b3)) {
 		activeGame = false;
-		alert(winnerMessage);
+		victorDisplay.innerHTML = winnerMessage;
 	} else if ((c1 == "X" || c1 == "O") && (c1 == c2 && c1 == c3)){
 		activeGame = false;
-		alert(winnerMessage);
+		victorDisplay.innerHTML = winnerMessage;
 	} else if ((a1 == "X" || a1 == "O") && (a1 == b1 && a1 == c1)){
 		activeGame = false;
-		alert(winnerMessage);
+		victorDisplay.innerHTML = winnerMessage;
 	} else if ((a2 == "X" || a2 == "O") && (a2 == b2 && a2 == c2)){
 		activeGame = false;
-		alert(winnerMessage);
+		victorDisplay.innerHTML = winnerMessage;
 	} else if ((a3 == "X" || a3 == "O") && (a3 == b3 && a3 == c3)){
 		activeGame = false;
-		alert(winnerMessage);
+		victorDisplay.innerHTML = winnerMessage;
 	} else if ((a1 == "X" || a1 == "O") && (a1 == b2 && a1 == c3)){
 		activeGame = false;
-		alert(winnerMessage);
+		victorDisplay.innerHTML = winnerMessage;
 	} else if ((c1 == "X" || c1 == "O") && (c1 == b2 && c1 == a3)){
 		activeGame = false;
-		alert(winnerMessage);
+		victorDisplay.innerHTML = winnerMessage;
 	} else if (counter === 10) {
 		activeGame = false;
-		alert("Game over, LOSERS!");
+		victorDisplay.innerHTML = "Game over, LOSERS!";
 	}
 }
 

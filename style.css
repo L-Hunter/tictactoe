@@ -1,22 +1,25 @@
 body {
 	background-color: #B7E57E;
+	font-family: 'Rock Salt', cursive;
 }
 
 .wrapper {
-	width: 70%;
+	width: 90%;
 }
 
 .neutral {
 	color: #ed4a3c;
 }
+
 .gameboard {
-	width: 80%;
+	width: 70%;
 	margin: 0 auto;
+	display: inline-block;
+	float: left;
 }
 
 h1 {
 	text-align: center;
-	width: 80%;
 }
 
 .game-square {
@@ -24,9 +27,14 @@ h1 {
 	width: 200px;
 	display: inline-block;
 	margin: auto 0;
-	font-size: 100px;
+	font-size: 90px;
 	text-align: center;
-	padding: 15px;
+	padding: 10px;
+}
+
+.row {
+	width: 720px;
+	margin: 0 auto;
 }
 
 .middle-row {
@@ -49,4 +57,26 @@ h1 {
 
 .inactive {
 	color: #B2B2B2;
+}
+
+.new-game {
+	font-size: 26px;
+	background-color: #ed4a3c;
+	color: #FFFFFF;
+	border-radius: 5px;
+	font-family: 'Rock Salt', cursive;
+}
+
+.controls {
+	width: 25%;
+	padding-top: 50px;
+	display: inline-block;
+	float: left;
+}
+
+#victor {
+	padding-top: 50px;
+	font-weight: bold;
+	font-size: 30px;
+	color: #ed4a3c;
 }
